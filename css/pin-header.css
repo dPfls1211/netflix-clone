@@ -1,0 +1,17 @@
+.pin-header {
+  display: flex;
+  align-items: center;
+  background-color: #141414;
+  padding-left: 20px;
+}
+
+.pin-header h5 {
+  color: azure;
+  padding: 0 10px;
+}
+
+.pin-header img {
+  width: 95px;
+  height: 25px;
+  margin: 0 30px;
+}
