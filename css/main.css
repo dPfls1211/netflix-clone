@@ -1,9 +1,8 @@
 @import "reset.css";
-@import "variables.css";
 
 @import "pin-header.css";
 
 body {
-  color: #2e363e;
+  color: white;
   background-color: #141414;
 }
