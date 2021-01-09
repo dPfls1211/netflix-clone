@@ -8,31 +8,35 @@
     <link rel="stylesheet" href="css/main.css"/>
     <script src="https://kit.fontawesome.com/8c279ad3f9.js" crossorigin="anonymous"></script>
   </head>
-  <body>
-      <nav class="pin-header-bar">
+  <body id="netflix-screen">
+    <!-- 상단 헤더바 고정. -->
+      <nav id="pin-header-bar_fixed" class="pin-header-bar">
         <div >
           <!-- 크기조절..이 되는ㄴ데ㅠ
           <a aria-label="Netflix"></a> -->
-          <img class="pin-header-bar__img" src="https://w.namu.la/s/e73d00d283513f086ecee75aa1edfef3449d97bccceda03ba0d9c240d28545645902a68011c5c2a3716044813aa5ff58326efd747daa413aea3de07c3ec21dbb954f08b7c84f102c7884cace78b248e93f5ff4d6701647dd9020993514fc776e"/>
-        </div>
-        <!--일정크기 줄면 메뉴로 전환 필요.-->
+          <img class="pin-header-bar__img" src="https://w.namu.la/s/e73d00d283513f086ecee75aa1edfef3449d97bccceda03ba0d9c240d28545645902a68011c5c2a3716044813aa5ff58326efd747daa413aea3de07c3ec21dbb13033805e1ad1032ea8173e9f7d8ed3b0b7efc06bc8b71b464c343cc8f082e31"/>
+            
         <div class="pin-header-bar__menu">
-          <ul class="pin-header-bar__nav-menu">
-            <li class="pin-header-bar__nav-menu__menu">메뉴</li>
-            <li class="pin-header-bar__nav-menu__subtitle">홈</li>
-            <li class="pin-header-bar__nav-menu__subtitle">캐릭터</li>
-            <li class="pin-header-bar__nav-menu__subtitle">TV프로그램</li>
-            <li class="pin-header-bar__nav-menu__subtitle">영화</li>
-            <li class="pin-header-bar__nav-menu__subtitle">최신 콘텐츠</li>
-            <li class="pin-header-bar__nav-menu__subtitle">내가 찜한 콘텐츠</li>
+          <ul class="pin-header-bar__list-menu">
+            <li class="pin-header-bar__list-menu__menu">메뉴 <i class="fas fa-caret-down"></i></li>
+            <li class="pin-header-bar__list-menu__subtitle" id="subtitle__home">홈</li>
+            <li class="pin-header-bar__list-menu__subtitle" id="subtitle__character">캐릭터</li>
+            <li class="pin-header-bar__list-menu__subtitle" id="subtitle__program">TV프로그램</li>
+            <li class="pin-header-bar__list-menu__subtitle" id="subtitle__movie">영화</li>
+            <li class="pin-header-bar__list-menu__subtitle" id="subtitle__newContents">최신 콘텐츠</li>
+            <li class="pin-header-bar__list-menu__subtitle" id="subtitle__myContents">내가 찜한 콘텐츠</li>
           </ul>
         </div>
-        <!---icon, 키즈 image, 키즈 버튼 추가허ㅏ기-->
+        </div>
         <div class="pin-header-bar__kidsBtn">
-          <i class="fas fa-search"></i>
-          <img class="pin-header-bar__kidsBtn__kidsImage" src="image/kidss.PNG"/>
           <div>
-           <span class="pin-header-bar__kidsBtn__kidsOut">키즈 페이지에서 나가기</span>
+            <i class="fas fa-search fa-lg"></i>
+          </div>
+          <div>
+            <img class="pin-header-bar__kidsBtn__kidsImage" src="image/kidss.PNG"/>
+            <div>
+             <span>키즈 페이지에서 나가기</span>
+            </div>
           </div>
         </div>
       </nav>
