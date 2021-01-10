@@ -1,12 +1,12 @@
 .main-recommend-banner {
   display: flex;
   justify-content: space-between;
-  height: 280px;
+  height: 320px;
   position: relative;
   padding: 40px;
 }
 
-.main-recommend-banner__image {
+.main-recommend-banner__images {
   position: absolute;
   top: 0;
   left: 0;
@@ -26,6 +26,15 @@
     url("../image/mainbannercenterimage.png");
 }
 
+#main-recommend-banner__image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  /* 늘어나야함.. 길이도같이 */
+  height: 500px;
+  z-index: -2;
+}
 .main-recommend-banner__left span {
   font-size: 13px;
   font-weight: bold;
@@ -38,6 +47,7 @@
   width: 350px;
   line-height: 130%;
   padding-bottom: 10px;
+  font-size: 14px;
 }
 
 .main-recommend-banner__left div {
@@ -81,7 +91,7 @@
   position: absolute;
   width: 100px;
   right: 0px;
-  bottom: 5px;
+  bottom: 65px;
   height: 25px;
   background: rgba(0, 0, 0, 0.493);
   display: flex;
