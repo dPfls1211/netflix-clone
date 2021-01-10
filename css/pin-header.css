@@ -108,7 +108,7 @@ ul {
   메뉴. 홈~~~ 보이게해야하는데 나중에~~~~할래*/
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 1050px) {
   .pin-header-bar__list-menu__menu {
     display: block;
   }
