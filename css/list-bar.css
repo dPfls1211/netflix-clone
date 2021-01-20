@@ -1,0 +1,115 @@
+.list-bar__title {
+  padding: 0 40px;
+  display: flex;
+  justify-content: space-between;
+}
+.list-bar__title__list {
+  display: flex;
+  padding: 5px 0;
+}
+
+.list-bar__title__list-bar {
+  margin: 1px;
+  height: 2px;
+  width: 12px;
+  display: block;
+  background: #4d4d4d;
+  /* AAAAAA */
+}
+
+#list-bar1 {
+  background: #aaaaaa;
+}
+
+.list-bar__title__content i {
+  display: none;
+}
+.list-bar__title__content span {
+  padding-left: 8px;
+  padding-right: 3px;
+  font-size: 8px;
+  display: none;
+}
+.list-bar__title__content {
+  color: #ffffffc2;
+}
+
+.list-bar__title__content:hover {
+  color: #ffffff;
+}
+.list-bar__title__content:hover span {
+  transition: 1s;
+  display: inline-flex;
+  animation: list-bar__show_animation 1s ease-in-out;
+}
+
+@keyframes list-bar__show_animation {
+  0% {
+    transform: none;
+  }
+  30% {
+    display: inline-flex;
+  }
+  100% {
+    transform: translateX(2px);
+  }
+}
+.list-bar__title__content:hover i {
+  display: inline-flex;
+  animation: list-bar__show_animationIcon 0.3s linear;
+}
+@keyframes list-bar__show_animationIcon {
+  0% {
+    display: inline-flex;
+    transform: translateX(-40px);
+  }
+  100% {
+    transform: translateX(2px);
+  }
+}
+.list-bar__image-list {
+  padding: 10px 0;
+  display: flex;
+  justify-content: space-between;
+}
+.list-bar__image-list__images {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 3px;
+}
+/* 상황에따라 크기 달라지게.. */
+.list-bar__image-list__image {
+  width: 215px;
+  margin: 0 3px;
+  height: 120px;
+  background: #aaaaaa;
+  border-radius: 5px;
+}
+.list-bar__image-list__image img {
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+}
+.list-bar__image-list__move {
+  width: 35px;
+  height: 120px;
+  background: #0000003b;
+  display: table;
+}
+.list-bar__image-list__move i {
+  display: table-cell;
+  vertical-align: middle;
+  height: 100%;
+  padding: 8px;
+}
+.list-bar__image-list__move:hover {
+  background: #00000073;
+}
+#list-bar__image-list__move-left {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+#list-bar__image-list__move-right {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}

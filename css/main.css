@@ -2,7 +2,8 @@
 
 @import "pin-header.css";
 @import "banner.css";
-@import "listbar.css";
+@import "animationlistbar.css";
+@import "list-bar.css";
 
 body {
   color: white;

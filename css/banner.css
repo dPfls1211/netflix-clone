@@ -6,6 +6,16 @@
   padding: 40px;
 }
 
+#main-recommend-banner__image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  /* 늘어나야함.. 길이도같이 */
+  height: 500px;
+  z-index: -3;
+}
+
 .main-recommend-banner__images {
   position: absolute;
   top: 0;
@@ -22,18 +32,8 @@
       to left,
       rgba(255, 255, 255, 0) 40%,
       rgba(14, 14, 14, 0.678) 100%
-    ),
-    url("../image/mainbannercenterimage.png");
-}
-
-#main-recommend-banner__image {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  /* 늘어나야함.. 길이도같이 */
-  height: 500px;
-  z-index: -2;
+    );
+  /* ,url("../image/mainbannercenterimage.png"); */
 }
 .main-recommend-banner__left span {
   font-size: 13px;
