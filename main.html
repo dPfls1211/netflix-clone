@@ -1,164 +1,911 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="shortcut icon" href="https://opportunitypanama.com/wp-content/uploads/2020/04/netflix-1.png"/>
-    <title>Netflix-Clone</title>
-    <link rel="stylesheet" href="css/main.css"/>
-    <script src="https://kit.fontawesome.com/8c279ad3f9.js" crossorigin="anonymous"></script>
-  </head>
-  <body id="netflix-screen">
-    <!-- 상단 헤더바 고정. -->
-      <nav id="pin-header-bar_fixed" class="pin-header-bar">
-        <div >
-          <!-- 크기조절..이 되는ㄴ데ㅠ
-          <a aria-label="Netflix"></a> -->
-          <img class="pin-header-bar__img" src="https://w.namu.la/s/e73d00d283513f086ecee75aa1edfef3449d97bccceda03ba0d9c240d28545645902a68011c5c2a3716044813aa5ff58326efd747daa413aea3de07c3ec21dbb13033805e1ad1032ea8173e9f7d8ed3b0b7efc06bc8b71b464c343cc8f082e31"/>
 
-        <div class="pin-header-bar__menu">
-          <ul class="pin-header-bar__list-menu">
-            <li class="pin-header-bar__list-menu__menu">메뉴 <i class="fas fa-caret-down"></i></li>
-            <li class="pin-header-bar__list-menu__subtitle" id="subtitle__home">홈</li>
-            <li class="pin-header-bar__list-menu__subtitle" id="subtitle__character">캐릭터</li>
-            <li class="pin-header-bar__list-menu__subtitle" id="subtitle__program">TV프로그램</li>
-            <li class="pin-header-bar__list-menu__subtitle" id="subtitle__movie">영화</li>
-            <li class="pin-header-bar__list-menu__subtitle" id="subtitle__newContents">최신 콘텐츠</li>
-            <li class="pin-header-bar__list-menu__subtitle" id="subtitle__myContents">내가 찜한 콘텐츠</li>
-          </ul>
-        </div>
-        </div>
-        <div class="pin-header-bar__kidsBtn">
-          <div>
-            <i class="fas fa-search fa-lg"></i>
-          </div>
-          <div>
-            <img class="pin-header-bar__kidsBtn__kidsImage" src="image/kidss.PNG"/>
-            <div>
-             <span>키즈 페이지에서 나가기</span>
-            </div>
-          </div>
-        </div>
-      </nav>
-      <script src="title.js"></script>
-      <div class="main-recommend-banner">
-        <!-- <img class="main-recommend-banner__image" src="https://post-phinf.pstatic.net/MjAxODAxMDhfMjY4/MDAxNTE1MzcyMjkxNDE0.jKay2MwPfzzI1Y3yNzejlY07aVuIFyqph3od7TgXaL0g.CKqYWTKW8dtS3rNR2MFPPQVaT0Ih7GHau0Zy_NesHB8g.PNG/1-1%EB%A9%B4-%EC%B6%94%EA%B0%80-%EC%82%AC%EC%A7%84.png?type=w1200"/> -->
-        <img id="main-recommend-banner__image" src="image/mainbannercenterimage.png"/>
-        <div class="main-recommend-banner__images" >
-        </div>
-        <div class="main-recommend-banner__left">
-          <!--로고 /설명 /재생 상세정보-->
-          <div class="main-recommend-banner__left-logo">
-            <img src="https://w.namu.la/s/646384f9eae1ffb3a83ec03f2cdfaa1b9ed460e9c2d48b197907675a8b9584e961b8e2851652b99c7c0800628a1d8c989ace18419aeed620d69c1c1f381bc09c47061fcb43f86093ba090cbf8d98bde5ddd90d771a044bcf11a88145e2b81ca2adaaafd10e710e19b4aa157edf3d3cdf"/>
-          </div>
-          <div class="main-recommend-banner__left-explane">
-            <span></span>102살 도깨비 신비와 하리&두리 남매가 힘을 합쳐 불의의 사고로 세상을 떠난 귀신들의 억울함을 풀어주는 판타지 애니메이션!</span>
-          </div>
-          <div class="main-recommend-banner__left-button">
-            <div class="main-recommend-banner__left-play">
-              <span><i class="fas fa-play "></i> 재생</span>
-            </div>
-            <div class="main-recommend-banner__left-info">
-              <span><i class="fas fa-info-circle"></i> 상세정보</span>
-            </div>
-          </div>
-        </div>
-        <div class="main-recommend-banner__right">
-          <!--연령표시-->
-          <span> </span>
-          <span id="main-recommend-banner__age">전체관람가</span>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="shortcut icon" href="https://opportunitypanama.com/wp-content/uploads/2020/04/netflix-1.png" />
+  <title>Netflix-Clone</title>
+  <link rel="stylesheet" href="css/main.css" />
+  <script src="https://kit.fontawesome.com/8c279ad3f9.js" crossorigin="anonymous"></script>
+</head>
+
+<body id="netflix-screen">
+  <!-- 상단 헤더바 고정. -->
+  <nav id="pin-header-bar_fixed" class="pin-header-bar">
+    <div>
+      <!-- 크기조절..이 되는ㄴ데ㅠ
+          <a aria-label="Netflix"></a> -->
+      <img class="pin-header-bar__img" src="image/netflix-logo.png" />
+
+      <div class="pin-header-bar__menu">
+        <ul class="pin-header-bar__list-menu">
+          <li class="pin-header-bar__list-menu__menu">메뉴 <i class="fas fa-caret-down"></i></li>
+          <li class="pin-header-bar__list-menu__subtitle" id="subtitle__home">홈</li>
+          <li class="pin-header-bar__list-menu__subtitle" id="subtitle__character">캐릭터</li>
+          <li class="pin-header-bar__list-menu__subtitle" id="subtitle__program">TV프로그램</li>
+          <li class="pin-header-bar__list-menu__subtitle" id="subtitle__movie">영화</li>
+          <li class="pin-header-bar__list-menu__subtitle" id="subtitle__newContents">최신 콘텐츠</li>
+          <li class="pin-header-bar__list-menu__subtitle" id="subtitle__myContents">내가 찜한 콘텐츠</li>
+        </ul>
+      </div>
+    </div>
+    <div class="pin-header-bar__kidsBtn">
+      <div>
+        <i class="fas fa-search fa-lg"></i>
+      </div>
+      <div>
+        <img class="pin-header-bar__kidsBtn__kidsImage" src="image/kidss.PNG" />
+        <div>
+          <span>키즈 페이지에서 나가기</span>
         </div>
       </div>
-      <!-- 1 -->
-      <div class="list-animation-bar">
-        <div class="list-animation-bar__title">
-          <span class="list-animation-bar__title__content">애니메이션<span>모두보기</span><i class="fas fa-angle-right"></i></span>
-          <div class="list-animation-bar__title__list">
-            <span id="animation-list-bar1" class="list-animation-bar__title__list-bar"></span>
-            <span id="animation-list-bar2" class="list-animation-bar__title__list-bar"></span>
-            <span id="animation-list-bar3" class="list-animation-bar__title__list-bar"></span>
-            <span id="animation-list-bar4" class="list-animation-bar__title__list-bar"></span>
-            <span id="animation-list-bar5" class="list-animation-bar__title__list-bar"></span>
-            <span id="animation-list-bar6" class="list-animation-bar__title__list-bar"></span>
-            <span id="animation-list-bar7" class="list-animation-bar__title__list-bar"></span>
-            <span id="animation-list-bar8" class="list-animation-bar__title__list-bar"></span>
-            <span id="animation-list-bar9" class="list-animation-bar__title__list-bar"></span>
-            <span id="animation-list-bar10" class="list-animation-bar__title__list-bar"></span>
-          </div>
+    </div>
+  </nav>
+  <script src="title.js"></script>
+  <div class="main-recommend-banner">
+    <!-- <img class="main-recommend-banner__image" src="https://post-phinf.pstatic.net/MjAxODAxMDhfMjY4/MDAxNTE1MzcyMjkxNDE0.jKay2MwPfzzI1Y3yNzejlY07aVuIFyqph3od7TgXaL0g.CKqYWTKW8dtS3rNR2MFPPQVaT0Ih7GHau0Zy_NesHB8g.PNG/1-1%EB%A9%B4-%EC%B6%94%EA%B0%80-%EC%82%AC%EC%A7%84.png?type=w1200"/> -->
+    <img id="main-recommend-banner__image" src="image/mainbannercenterimage.png" />
+    <div class="main-recommend-banner__images">
+    </div>
+    <div class="main-recommend-banner__left">
+      <!--로고 /설명 /재생 상세정보-->
+      <div class="main-recommend-banner__left-logo">
+        <img src="image/mainbannerimage.png" />
+      </div>
+      <div class="main-recommend-banner__left-explane">
+        <span></span>102살 도깨비 신비와 하리&두리 남매가 힘을 합쳐 불의의 사고로 세상을 떠난 귀신들의 억울함을 풀어주는 판타지 애니메이션!</span>
+      </div>
+      <div class="main-recommend-banner__left-button">
+        <div class="main-recommend-banner__left-play">
+          <span><i class="fas fa-play "></i> 재생</span>
         </div>
-        <div class="list-animation-bar__image-list">
-          <div id="list-animation-bar__image-list__move-left" class="list-animation-bar__image-list__move"><i class="fas fa-angle-left fa-3x"></i></div>
-          <div class="list-animation-bar__image-list__images">
-            <!-- 크기 줄어들다 일정 크기되면 image div생성 -->
-                <div id="list_item_left0" class="list_item_left"></div>
-                <div id="list_item_left1" class="list_item_left"></div>
-                <div id="list_item_left2" class="list_item_left"></div>
-                <div id="list_item_left3" class="list_item_left"></div>
-                <div id="list_image_left_hidden" class="list_image_move list_item_left"><img src="image/babybossBG.jpg"/></div>  
-              
-                  <div id="list_image0" class="list-animation-bar__image-list__image list_nav_bar"><img src="image/Adventure_Time__Title_card.png"/></div>
-                  <div id="list_image1" class="list-animation-bar__image-list__image list_nav_bar"><img src="image/larva_.jpg"/></div>
-                  <div id="list_image2" class="list-animation-bar__image-list__image list_nav_bar"><img src="image/babybossBG.jpg"/></div>
-                  <div id="list_image3" class="list-animation-bar__image-list__image list_nav_bar"><img src="image/Adventure_Time__Title_card.png"/></div>
-                  <div id="list_image4" class="list-animation-bar__image-list__image list_nav_bar"><img src="image/larva_.jpg"/></div>
-                  <div id="list_image5" class="list-animation-bar__image-list__image list_nav_bar"><img src="image/babybossBG.jpg"/></div>
-                
-                  <div id="list_image_right_hidden" class="list_image_move list_item_right"><img src="image/Adventure_Time__Title_card.png"/></div>
-                  <div id="list_item_right0" class="list_item_right"><img src="image/larva_.jpg"/></div>
-                  <div id="list_item_right1" class="list_item_right"><img src="image/babybossBG.jpg"/></div>
-                  <div id="list_item_right2" class="list_item_right"><img src="image/Adventure_Time__Title_card.png"/></div>
-                  <div id="list_item_right3" class="list_item_right"><img src="image/larva_.jpg"/></div>
-                
-          </div>
-          <div id="list-animation-bar__image-list__move-right" class="list-animation-bar__image-list__move"><i class="fas fa-angle-right fa-3x"></i></div>
+        <div class="main-recommend-banner__left-info">
+          <span><i class="fas fa-info-circle"></i> 상세정보</span>
         </div>
       </div>
-      <!-- 2 -->
-      <div class="list-animation-bar">
-        <div class="list-animation-bar__title">
-          <span >모두가 좋아해요</span>
-          <div class="list-animation-bar__title__list">
-            <span id="animation-list-bar1" class="list-animation-bar__title__list-bar"></span>
-            <span id="animation-list-bar2" class="list-animation-bar__title__list-bar"></span>
-            <span id="animation-list-bar3" class="list-animation-bar__title__list-bar"></span>
-            <span id="animation-list-bar4" class="list-animation-bar__title__list-bar"></span>
-            <span id="animation-list-bar5" class="list-animation-bar__title__list-bar"></span>
-            <span id="animation-list-bar6" class="list-animation-bar__title__list-bar"></span>
-            <span id="animation-list-bar7" class="list-animation-bar__title__list-bar"></span>
-            <span id="animation-list-bar8" class="list-animation-bar__title__list-bar"></span>
-            <span id="animation-list-bar9" class="list-animation-bar__title__list-bar"></span>
-            <span id="animation-list-bar10" class="list-animation-bar__title__list-bar"></span>
-          </div>
-        </div>
-        <div class="list-animation-bar__image-list">
-          <div id="list-animation-bar__image-list__move-left" class="list-animation-bar__image-list__move"><i class="fas fa-angle-left fa-3x"></i></div>
-          <div class="list-animation-bar__image-list__images">
-            <!-- 크기 줄어들다 일정 크기되면 image div생성 -->
-                <div id="list_item_left0" class="list_item_left"></div>
-                <div id="list_item_left1" class="list_item_left"></div>
-                <div id="list_item_left2" class="list_item_left"></div>
-                <div id="list_item_left3" class="list_item_left"></div>
-                <div id="list_image_left_hidden" class="list_image_move list_item_left"><img src="image/babybossBG.jpg"/></div>  
-              
-                  <div id="list_image0" class="list-animation-bar__image-list__image list_nav_bar"><img src="image/Adventure_Time__Title_card.png"/></div>
-                  <div id="list_image1" class="list-animation-bar__image-list__image list_nav_bar"><img src="image/larva_.jpg"/></div>
-                  <div id="list_image2" class="list-animation-bar__image-list__image list_nav_bar"><img src="image/babybossBG.jpg"/></div>
-                  <div id="list_image3" class="list-animation-bar__image-list__image list_nav_bar"><img src="image/Adventure_Time__Title_card.png"/></div>
-                  <div id="list_image4" class="list-animation-bar__image-list__image list_nav_bar"><img src="image/larva_.jpg"/></div>
-                  <div id="list_image5" class="list-animation-bar__image-list__image list_nav_bar"><img src="image/babybossBG.jpg"/></div>
-                
-                  <div id="list_image_right_hidden" class="list_image_move list_item_right"><img src="image/Adventure_Time__Title_card.png"/></div>
-                  <div id="list_item_right0" class="list_item_right"><img src="image/larva_.jpg"/></div>
-                  <div id="list_item_right1" class="list_item_right"><img src="image/babybossBG.jpg"/></div>
-                  <div id="list_item_right2" class="list_item_right"><img src="image/Adventure_Time__Title_card.png"/></div>
-                  <div id="list_item_right3" class="list_item_right"><img src="image/larva_.jpg"/></div>
-                
-          </div>
-          <div id="list-animation-bar__image-list__move-right" class="list-animation-bar__image-list__move"><i class="fas fa-angle-right fa-3x"></i></div>
-        </div>
+    </div>
+    <div class="main-recommend-banner__right">
+      <!--연령표시-->
+      <span> </span>
+      <span id="main-recommend-banner__age">전체관람가</span>
+    </div>
+  </div>
+  <!-- 1 -->
+  <div class="list-animation-bar">
+    <div class="list-animation-bar__title">
+      <span class="list-animation-bar__title__content">애니메이션<span>모두보기</span><i class="fas fa-angle-right"></i></span>
+      <div class="list-animation-bar__title__list">
+        <span id="animation-list-bar1" class="list-animation-bar__title__list-bar"></span>
+        <span id="animation-list-bar2" class="list-animation-bar__title__list-bar"></span>
+        <span id="animation-list-bar3" class="list-animation-bar__title__list-bar"></span>
+        <span id="animation-list-bar4" class="list-animation-bar__title__list-bar"></span>
+        <span id="animation-list-bar5" class="list-animation-bar__title__list-bar"></span>
+        <span id="animation-list-bar6" class="list-animation-bar__title__list-bar"></span>
+        <span id="animation-list-bar7" class="list-animation-bar__title__list-bar"></span>
+        <span id="animation-list-bar8" class="list-animation-bar__title__list-bar"></span>
+        <span id="animation-list-bar9" class="list-animation-bar__title__list-bar"></span>
+        <span id="animation-list-bar10" class="list-animation-bar__title__list-bar"></span>
       </div>
-      <!-- 3 -->
-      <script src="list-bar.js"></script>
-      <script src="list-bar-animation.js"></script>
-  </body>
+    </div>
+    <div class="list-animation-bar__image-list">
+      <div id="list-animation-bar__image-list__move-left" class="list-animation-bar__image-list__move"><i
+          class="fas fa-angle-left fa-3x"></i></div>
+      <div class="list-animation-bar__image-list__images">
+        <!-- 크기 줄어들다 일정 크기되면 image div생성 -->
+        <div id="list_item_left0" class="list_item_left"></div>
+        <div id="list_item_left1" class="list_item_left"></div>
+        <div id="list_item_left2" class="list_item_left"></div>
+        <div id="list_item_left3" class="list_item_left"></div>
+        <div id="list_image_left_hidden" class="list_image_move list_item_left"><img src="image/babybossBG.jpg" /></div>
+
+        <div id="list_image0" class="list-animation-bar__image-list__image list_nav_bar"><img
+            src="image/Adventure_Time__Title_card.png" /></div>
+        <div id="list_image1" class="list-animation-bar__image-list__image list_nav_bar"><img src="image/larva_.jpg" />
+        </div>
+        <div id="list_image2" class="list-animation-bar__image-list__image list_nav_bar"><img
+            src="image/babybossBG.jpg" /></div>
+        <div id="list_image3" class="list-animation-bar__image-list__image list_nav_bar"><img
+            src="image/Adventure_Time__Title_card.png" /></div>
+        <div id="list_image4" class="list-animation-bar__image-list__image list_nav_bar"><img src="image/larva_.jpg" />
+        </div>
+        <div id="list_image5" class="list-animation-bar__image-list__image list_nav_bar"><img
+            src="image/babybossBG.jpg" /></div>
+
+        <div id="list_image_right_hidden" class="list_image_move list_item_right"><img
+            src="image/Adventure_Time__Title_card.png" /></div>
+        <div id="list_item_right0" class="list_item_right"><img src="image/larva_.jpg" /></div>
+        <div id="list_item_right1" class="list_item_right"><img src="image/babybossBG.jpg" /></div>
+        <div id="list_item_right2" class="list_item_right"><img src="image/Adventure_Time__Title_card.png" /></div>
+        <div id="list_item_right3" class="list_item_right"><img src="image/larva_.jpg" /></div>
+
+      </div>
+      <div id="list-animation-bar__image-list__move-right" class="list-animation-bar__image-list__move"><i
+          class="fas fa-angle-right fa-3x"></i></div>
+    </div>
+  </div>
+  <!-- 2 -->
+  <div class="list-animation-bar">
+    <div class="list-animation-bar__title">
+      <span>모두가 좋아해요</span>
+      <div class="list-animation-bar__title__list">
+        <span id="animation-list-bar1" class="list-animation-bar__title__list-bar"></span>
+        <span id="animation-list-bar2" class="list-animation-bar__title__list-bar"></span>
+        <span id="animation-list-bar3" class="list-animation-bar__title__list-bar"></span>
+        <span id="animation-list-bar4" class="list-animation-bar__title__list-bar"></span>
+        <span id="animation-list-bar5" class="list-animation-bar__title__list-bar"></span>
+        <span id="animation-list-bar6" class="list-animation-bar__title__list-bar"></span>
+        <span id="animation-list-bar7" class="list-animation-bar__title__list-bar"></span>
+        <span id="animation-list-bar8" class="list-animation-bar__title__list-bar"></span>
+        <span id="animation-list-bar9" class="list-animation-bar__title__list-bar"></span>
+        <span id="animation-list-bar10" class="list-animation-bar__title__list-bar"></span>
+      </div>
+    </div>
+    <div class="list-animation-bar__image-list">
+      <div id="list-animation-bar__image-list__move-left" class="list-animation-bar__image-list__move"><i
+          class="fas fa-angle-left fa-3x"></i></div>
+      <div class="list-animation-bar__image-list__images">
+        <!-- 크기 줄어들다 일정 크기되면 image div생성 -->
+        <div id="list_item_left0" class="list_item_left"></div>
+        <div id="list_item_left1" class="list_item_left"></div>
+        <div id="list_item_left2" class="list_item_left"></div>
+        <div id="list_item_left3" class="list_item_left"></div>
+        <div id="list_image_left_hidden" class="list_image_move list_item_left"><img src="image/babybossBG.jpg" /></div>
+
+        <div id="list_image0" class="list-animation-bar__image-list__image list_nav_bar"><img
+            src="image/Adventure_Time__Title_card.png" /></div>
+        <div id="list_image1" class="list-animation-bar__image-list__image list_nav_bar"><img src="image/larva_.jpg" />
+        </div>
+        <div id="list_image2" class="list-animation-bar__image-list__image list_nav_bar"><img
+            src="image/babybossBG.jpg" /></div>
+        <div id="list_image3" class="list-animation-bar__image-list__image list_nav_bar"><img
+            src="image/Adventure_Time__Title_card.png" /></div>
+        <div id="list_image4" class="list-animation-bar__image-list__image list_nav_bar"><img src="image/larva_.jpg" />
+        </div>
+        <div id="list_image5" class="list-animation-bar__image-list__image list_nav_bar"><img
+            src="image/babybossBG.jpg" /></div>
+
+        <div id="list_image_right_hidden" class="list_image_move list_item_right"><img
+            src="image/Adventure_Time__Title_card.png" /></div>
+        <div id="list_item_right0" class="list_item_right"><img src="image/larva_.jpg" /></div>
+        <div id="list_item_right1" class="list_item_right"><img src="image/babybossBG.jpg" /></div>
+        <div id="list_item_right2" class="list_item_right"><img src="image/Adventure_Time__Title_card.png" /></div>
+        <div id="list_item_right3" class="list_item_right"><img src="image/larva_.jpg" /></div>
+
+      </div>
+      <div id="list-animation-bar__image-list__move-right" class="list-animation-bar__image-list__move"><i
+          class="fas fa-angle-right fa-3x"></i></div>
+    </div>
+  </div>
+  <!-- 3 -->
+  <div class="list-animation-bar _ch_">
+    <div class="list-animation-bar__title">
+      <span>캐릭터 친구들</span>
+      <div class="list-animation-bar__title__list">
+      </div>
+    </div>
+    <div class="list-animation-bar__image-list">
+      <div id="list-animation-bar__image-list__move-left" class="list-animation-bar__image-list__move _ch"><i
+          class="fas fa-angle-left fa-3x"></i></div>
+      <div class="list-animation-bar__image-list__images_ch">
+        <!-- 크기 줄어들다 일정 크기되면 image div생성 -->
+        <div id="list_item_left0" class="list_item_left"></div>
+        <div id="list_item_left1" class="list_item_left"></div>
+        <div id="list_item_left2" class="list_item_left"></div>
+        <div id="list_item_left3" class="list_item_left"></div>
+        <div id="list_image_left_hidden" class="list_image_move list_item_left"><img src="image/BossBaby_.jpg" /></div>
+
+        <div id="list_image0" class="list-animation-bar__image-list__image list_nav_bar "><img src="image/Bmo.png" />
+        </div>
+        <div id="list_image1" class="list-animation-bar__image-list__image list_nav_bar "><img
+            src="image/LarvaCh.jpg" />
+        </div>
+        <div id="list_image2" class="list-animation-bar__image-list__image list_nav_bar "><img
+            src="image/BossBaby_.jpg" /></div>
+        <div id="list_image3" class="list-animation-bar__image-list__image list_nav_bar "><img src="image/Bmo.png" />
+        </div>
+        <div id="list_image4" class="list-animation-bar__image-list__image list_nav_bar "><img
+            src="image/LarvaCh.jpg" />
+        </div>
+        <div id="list_image5" class="list-animation-bar__image-list__image list_nav_bar "><img
+            src="image/BossBaby_.jpg" /></div>
+
+        <div id="list_image_right_hidden" class="list_image_move list_item_right "><img src="image/Bmo.png" /></div>
+        <div id="list_item_right0" class="list_item_right "><img src="image/LarvaCh.jpg" /></div>
+        <div id="list_item_right1" class="list_item_right "><img src="image/BossBaby_.jpg" /></div>
+        <div id="list_item_right2" class="list_item_right "><img src="image/Bmo.png" /></div>
+        <div id="list_item_right3" class="list_item_right "><img src="image/LarvaCh.jpg" /></div>
+
+      </div>
+      <div id="list-animation-bar__image-list__move-right" class="list-animation-bar__image-list__move _ch"><i
+          class="fas fa-angle-right fa-3x"></i></div>
+    </div>
+  </div>
+  <!-- 4 -->
+  <div class="list-animation-bar">
+    <div class="list-animation-bar__title">
+      <span>새로 등록된 콘텐츠</span>
+      <div class="list-animation-bar__title__list">
+        <span id="animation-list-bar1" class="list-animation-bar__title__list-bar"></span>
+        <span id="animation-list-bar2" class="list-animation-bar__title__list-bar"></span>
+        <span id="animation-list-bar3" class="list-animation-bar__title__list-bar"></span>
+        <span id="animation-list-bar4" class="list-animation-bar__title__list-bar"></span>
+        <span id="animation-list-bar5" class="list-animation-bar__title__list-bar"></span>
+        <span id="animation-list-bar6" class="list-animation-bar__title__list-bar"></span>
+        <span id="animation-list-bar7" class="list-animation-bar__title__list-bar"></span>
+        <span id="animation-list-bar8" class="list-animation-bar__title__list-bar"></span>
+        <span id="animation-list-bar9" class="list-animation-bar__title__list-bar"></span>
+        <span id="animation-list-bar10" class="list-animation-bar__title__list-bar"></span>
+      </div>
+    </div>
+    <div class="list-animation-bar__image-list">
+      <div id="list-animation-bar__image-list__move-left" class="list-animation-bar__image-list__move"><i
+          class="fas fa-angle-left fa-3x"></i></div>
+      <div class="list-animation-bar__image-list__images">
+        <!-- 크기 줄어들다 일정 크기되면 image div생성 -->
+        <div id="list_item_left0" class="list_item_left"></div>
+        <div id="list_item_left1" class="list_item_left"></div>
+        <div id="list_item_left2" class="list_item_left"></div>
+        <div id="list_item_left3" class="list_item_left"></div>
+        <div id="list_image_left_hidden" class="list_image_move list_item_left"><img src="image/babybossBG.jpg" /></div>
+
+        <div id="list_image0" class="list-animation-bar__image-list__image list_nav_bar"><img
+            src="image/Adventure_Time__Title_card.png" /></div>
+        <div id="list_image1" class="list-animation-bar__image-list__image list_nav_bar"><img src="image/larva_.jpg" />
+        </div>
+        <div id="list_image2" class="list-animation-bar__image-list__image list_nav_bar"><img
+            src="image/babybossBG.jpg" /></div>
+        <div id="list_image3" class="list-animation-bar__image-list__image list_nav_bar"><img
+            src="image/Adventure_Time__Title_card.png" /></div>
+        <div id="list_image4" class="list-animation-bar__image-list__image list_nav_bar"><img src="image/larva_.jpg" />
+        </div>
+        <div id="list_image5" class="list-animation-bar__image-list__image list_nav_bar"><img
+            src="image/babybossBG.jpg" /></div>
+
+        <div id="list_image_right_hidden" class="list_image_move list_item_right"><img
+            src="image/Adventure_Time__Title_card.png" /></div>
+        <div id="list_item_right0" class="list_item_right"><img src="image/larva_.jpg" /></div>
+        <div id="list_item_right1" class="list_item_right"><img src="image/babybossBG.jpg" /></div>
+        <div id="list_item_right2" class="list_item_right"><img src="image/Adventure_Time__Title_card.png" /></div>
+        <div id="list_item_right3" class="list_item_right"><img src="image/larva_.jpg" /></div>
+
+      </div>
+      <div id="list-animation-bar__image-list__move-right" class="list-animation-bar__image-list__move"><i
+          class="fas fa-angle-right fa-3x"></i></div>
+    </div>
+  </div>
+  <!-- 5 -->
+  <div class="list-animation-bar _origin_">
+    <div class="list-animation-bar__title">
+      <span class="list-animation-bar__title__content">넷플릭스 오리지널 시리즈<span>모두보기</span><i
+          class="fas fa-angle-right"></i></span>
+      <div class="list-animation-bar__title__list">
+        <span id="animation-list-bar1" class="list-animation-bar__title__list-bar"></span>
+        <span id="animation-list-bar2" class="list-animation-bar__title__list-bar"></span>
+        <span id="animation-list-bar3" class="list-animation-bar__title__list-bar"></span>
+        <span id="animation-list-bar4" class="list-animation-bar__title__list-bar"></span>
+        <span id="animation-list-bar5" class="list-animation-bar__title__list-bar"></span>
+        <span id="animation-list-bar6" class="list-animation-bar__title__list-bar"></span>
+        <span id="animation-list-bar7" class="list-animation-bar__title__list-bar"></span>
+        <span id="animation-list-bar8" class="list-animation-bar__title__list-bar"></span>
+        <span id="animation-list-bar9" class="list-animation-bar__title__list-bar"></span>
+        <span id="animation-list-bar10" class="list-animation-bar__title__list-bar"></span>
+      </div>
+    </div>
+    <div class="list-animation-bar__image-list">
+      <div id="list-animation-bar__image-list__move-left" class="list-animation-bar__image-list__move"><i
+          class="fas fa-angle-left fa-3x"></i></div>
+      <div class="list-animation-bar__image-list__images_orign">
+        <!-- 크기 줄어들다 일정 크기되면 image div생성 -->
+        <div id="list_item_left0" class="list_item_left"></div>
+        <div id="list_item_left1" class="list_item_left"></div>
+        <div id="list_item_left2" class="list_item_left"></div>
+        <div id="list_item_left3" class="list_item_left"></div>
+        <div id="list_image_left_hidden" class="list_image_move list_item_left"><img src="image/babyboss_c.jpg" /></div>
+
+        <div id="list_image0" class="list-animation-bar__image-list__image list_nav_bar"><img
+            src="image/adventureTime__.jpg" /></div>
+        <div id="list_image1" class="list-animation-bar__image-list__image list_nav_bar"><img src="image/larvaBg.jpg" />
+        </div>
+        <div id="list_image2" class="list-animation-bar__image-list__image list_nav_bar"><img
+            src="image/babyboss_c.jpg" /></div>
+        <div id="list_image3" class="list-animation-bar__image-list__image list_nav_bar"><img
+            src="image/adventureTime__.jpg" /></div>
+        <div id="list_image4" class="list-animation-bar__image-list__image list_nav_bar"><img src="image/larvaBg.jpg" />
+        </div>
+        <div id="list_image5" class="list-animation-bar__image-list__image list_nav_bar"><img
+            src="image/babyboss_c.jpg" /></div>
+
+        <div id="list_image_right_hidden" class="list_image_move list_item_right"><img
+            src="image/adventureTime__.jpg" /></div>
+        <div id="list_item_right0" class="list_item_right"><img src="image/larvaBg.jpg" /></div>
+        <div id="list_item_right1" class="list_item_right"><img src="image/babyboss_c.jpg" /></div>
+        <div id="list_item_right2" class="list_item_right"><img src="image/adventureTime__.jpg" /></div>
+        <div id="list_item_right3" class="list_item_right"><img src="image/larvaBg.jpg" /></div>
+
+      </div>
+      <div id="list-animation-bar__image-list__move-right" class="list-animation-bar__image-list__move"><i
+          class="fas fa-angle-right fa-3x"></i></div>
+    </div>
+  </div>
+  <!-- 6 -->
+  <div class="list-animation-bar">
+    <div class="list-animation-bar__title">
+      <span>오늘의 발견! 숨은 보물 추천작</span>
+      <div class="list-animation-bar__title__list">
+        <span id="animation-list-bar1" class="list-animation-bar__title__list-bar"></span>
+        <span id="animation-list-bar2" class="list-animation-bar__title__list-bar"></span>
+        <span id="animation-list-bar3" class="list-animation-bar__title__list-bar"></span>
+        <span id="animation-list-bar4" class="list-animation-bar__title__list-bar"></span>
+        <span id="animation-list-bar5" class="list-animation-bar__title__list-bar"></span>
+        <span id="animation-list-bar6" class="list-animation-bar__title__list-bar"></span>
+        <span id="animation-list-bar7" class="list-animation-bar__title__list-bar"></span>
+        <span id="animation-list-bar8" class="list-animation-bar__title__list-bar"></span>
+        <span id="animation-list-bar9" class="list-animation-bar__title__list-bar"></span>
+        <span id="animation-list-bar10" class="list-animation-bar__title__list-bar"></span>
+      </div>
+    </div>
+    <div class="list-animation-bar__image-list">
+      <div id="list-animation-bar__image-list__move-left" class="list-animation-bar__image-list__move"><i
+          class="fas fa-angle-left fa-3x"></i></div>
+      <div class="list-animation-bar__image-list__images">
+        <!-- 크기 줄어들다 일정 크기되면 image div생성 -->
+        <div id="list_item_left0" class="list_item_left"></div>
+        <div id="list_item_left1" class="list_item_left"></div>
+        <div id="list_item_left2" class="list_item_left"></div>
+        <div id="list_item_left3" class="list_item_left"></div>
+        <div id="list_image_left_hidden" class="list_image_move list_item_left"><img src="image/babybossBG.jpg" /></div>
+
+        <div id="list_image0" class="list-animation-bar__image-list__image list_nav_bar"><img
+            src="image/Adventure_Time__Title_card.png" /></div>
+        <div id="list_image1" class="list-animation-bar__image-list__image list_nav_bar"><img src="image/larva_.jpg" />
+        </div>
+        <div id="list_image2" class="list-animation-bar__image-list__image list_nav_bar"><img
+            src="image/babybossBG.jpg" /></div>
+        <div id="list_image3" class="list-animation-bar__image-list__image list_nav_bar"><img
+            src="image/Adventure_Time__Title_card.png" /></div>
+        <div id="list_image4" class="list-animation-bar__image-list__image list_nav_bar"><img src="image/larva_.jpg" />
+        </div>
+        <div id="list_image5" class="list-animation-bar__image-list__image list_nav_bar"><img
+            src="image/babybossBG.jpg" /></div>
+
+        <div id="list_image_right_hidden" class="list_image_move list_item_right"><img
+            src="image/Adventure_Time__Title_card.png" /></div>
+        <div id="list_item_right0" class="list_item_right"><img src="image/larva_.jpg" /></div>
+        <div id="list_item_right1" class="list_item_right"><img src="image/babybossBG.jpg" /></div>
+        <div id="list_item_right2" class="list_item_right"><img src="image/Adventure_Time__Title_card.png" /></div>
+        <div id="list_item_right3" class="list_item_right"><img src="image/larva_.jpg" /></div>
+
+      </div>
+      <div id="list-animation-bar__image-list__move-right" class="list-animation-bar__image-list__move"><i
+          class="fas fa-angle-right fa-3x"></i></div>
+    </div>
+  </div>
+  <!-- 7 -->
+  <div class="list-animation-bar">
+    <div class="list-animation-bar__title">
+      <span class="list-animation-bar__title__content">공상 과학<span>모두보기</span><i class="fas fa-angle-right"></i></span>
+      <div class="list-animation-bar__title__list">
+        <span id="animation-list-bar1" class="list-animation-bar__title__list-bar"></span>
+        <span id="animation-list-bar2" class="list-animation-bar__title__list-bar"></span>
+        <span id="animation-list-bar3" class="list-animation-bar__title__list-bar"></span>
+        <span id="animation-list-bar4" class="list-animation-bar__title__list-bar"></span>
+        <span id="animation-list-bar5" class="list-animation-bar__title__list-bar"></span>
+        <span id="animation-list-bar6" class="list-animation-bar__title__list-bar"></span>
+        <span id="animation-list-bar7" class="list-animation-bar__title__list-bar"></span>
+        <span id="animation-list-bar8" class="list-animation-bar__title__list-bar"></span>
+        <span id="animation-list-bar9" class="list-animation-bar__title__list-bar"></span>
+        <span id="animation-list-bar10" class="list-animation-bar__title__list-bar"></span>
+      </div>
+    </div>
+    <div class="list-animation-bar__image-list">
+      <div id="list-animation-bar__image-list__move-left" class="list-animation-bar__image-list__move"><i
+          class="fas fa-angle-left fa-3x"></i></div>
+      <div class="list-animation-bar__image-list__images">
+        <!-- 크기 줄어들다 일정 크기되면 image div생성 -->
+        <div id="list_item_left0" class="list_item_left"></div>
+        <div id="list_item_left1" class="list_item_left"></div>
+        <div id="list_item_left2" class="list_item_left"></div>
+        <div id="list_item_left3" class="list_item_left"></div>
+        <div id="list_image_left_hidden" class="list_image_move list_item_left"><img src="image/babybossBG.jpg" /></div>
+
+        <div id="list_image0" class="list-animation-bar__image-list__image list_nav_bar"><img
+            src="image/Adventure_Time__Title_card.png" /></div>
+        <div id="list_image1" class="list-animation-bar__image-list__image list_nav_bar"><img src="image/larva_.jpg" />
+        </div>
+        <div id="list_image2" class="list-animation-bar__image-list__image list_nav_bar"><img
+            src="image/babybossBG.jpg" /></div>
+        <div id="list_image3" class="list-animation-bar__image-list__image list_nav_bar"><img
+            src="image/Adventure_Time__Title_card.png" /></div>
+        <div id="list_image4" class="list-animation-bar__image-list__image list_nav_bar"><img src="image/larva_.jpg" />
+        </div>
+        <div id="list_image5" class="list-animation-bar__image-list__image list_nav_bar"><img
+            src="image/babybossBG.jpg" /></div>
+
+        <div id="list_image_right_hidden" class="list_image_move list_item_right"><img
+            src="image/Adventure_Time__Title_card.png" /></div>
+        <div id="list_item_right0" class="list_item_right"><img src="image/larva_.jpg" /></div>
+        <div id="list_item_right1" class="list_item_right"><img src="image/babybossBG.jpg" /></div>
+        <div id="list_item_right2" class="list_item_right"><img src="image/Adventure_Time__Title_card.png" /></div>
+        <div id="list_item_right3" class="list_item_right"><img src="image/larva_.jpg" /></div>
+
+      </div>
+      <div id="list-animation-bar__image-list__move-right" class="list-animation-bar__image-list__move"><i
+          class="fas fa-angle-right fa-3x"></i></div>
+    </div>
+  </div>
+  <!-- 8 -->
+  <div class="list-animation-bar">
+    <div class="list-animation-bar__title">
+      <span class="list-animation-bar__title__content">웃음 폭발<span>모두보기</span><i class="fas fa-angle-right"></i></span>
+      <div class="list-animation-bar__title__list">
+        <span id="animation-list-bar1" class="list-animation-bar__title__list-bar"></span>
+        <span id="animation-list-bar2" class="list-animation-bar__title__list-bar"></span>
+        <span id="animation-list-bar3" class="list-animation-bar__title__list-bar"></span>
+        <span id="animation-list-bar4" class="list-animation-bar__title__list-bar"></span>
+        <span id="animation-list-bar5" class="list-animation-bar__title__list-bar"></span>
+        <span id="animation-list-bar6" class="list-animation-bar__title__list-bar"></span>
+        <span id="animation-list-bar7" class="list-animation-bar__title__list-bar"></span>
+        <span id="animation-list-bar8" class="list-animation-bar__title__list-bar"></span>
+        <span id="animation-list-bar9" class="list-animation-bar__title__list-bar"></span>
+        <span id="animation-list-bar10" class="list-animation-bar__title__list-bar"></span>
+      </div>
+    </div>
+    <div class="list-animation-bar__image-list">
+      <div id="list-animation-bar__image-list__move-left" class="list-animation-bar__image-list__move"><i
+          class="fas fa-angle-left fa-3x"></i></div>
+      <div class="list-animation-bar__image-list__images">
+        <!-- 크기 줄어들다 일정 크기되면 image div생성 -->
+        <div id="list_item_left0" class="list_item_left"></div>
+        <div id="list_item_left1" class="list_item_left"></div>
+        <div id="list_item_left2" class="list_item_left"></div>
+        <div id="list_item_left3" class="list_item_left"></div>
+        <div id="list_image_left_hidden" class="list_image_move list_item_left"><img src="image/babybossBG.jpg" /></div>
+
+        <div id="list_image0" class="list-animation-bar__image-list__image list_nav_bar"><img
+            src="image/Adventure_Time__Title_card.png" /></div>
+        <div id="list_image1" class="list-animation-bar__image-list__image list_nav_bar"><img src="image/larva_.jpg" />
+        </div>
+        <div id="list_image2" class="list-animation-bar__image-list__image list_nav_bar"><img
+            src="image/babybossBG.jpg" /></div>
+        <div id="list_image3" class="list-animation-bar__image-list__image list_nav_bar"><img
+            src="image/Adventure_Time__Title_card.png" /></div>
+        <div id="list_image4" class="list-animation-bar__image-list__image list_nav_bar"><img src="image/larva_.jpg" />
+        </div>
+        <div id="list_image5" class="list-animation-bar__image-list__image list_nav_bar"><img
+            src="image/babybossBG.jpg" /></div>
+
+        <div id="list_image_right_hidden" class="list_image_move list_item_right"><img
+            src="image/Adventure_Time__Title_card.png" /></div>
+        <div id="list_item_right0" class="list_item_right"><img src="image/larva_.jpg" /></div>
+        <div id="list_item_right1" class="list_item_right"><img src="image/babybossBG.jpg" /></div>
+        <div id="list_item_right2" class="list_item_right"><img src="image/Adventure_Time__Title_card.png" /></div>
+        <div id="list_item_right3" class="list_item_right"><img src="image/larva_.jpg" /></div>
+
+      </div>
+      <div id="list-animation-bar__image-list__move-right" class="list-animation-bar__image-list__move"><i
+          class="fas fa-angle-right fa-3x"></i></div>
+    </div>
+  </div>
+  <!-- 9 -->
+  <div class="list-animation-bar">
+    <div class="list-animation-bar__title">
+      <span class="list-animation-bar__title__content">액션<span>모두보기</span><i class="fas fa-angle-right"></i></span>
+      <div class="list-animation-bar__title__list">
+        <span id="animation-list-bar1" class="list-animation-bar__title__list-bar"></span>
+        <span id="animation-list-bar2" class="list-animation-bar__title__list-bar"></span>
+        <span id="animation-list-bar3" class="list-animation-bar__title__list-bar"></span>
+        <span id="animation-list-bar4" class="list-animation-bar__title__list-bar"></span>
+        <span id="animation-list-bar5" class="list-animation-bar__title__list-bar"></span>
+        <span id="animation-list-bar6" class="list-animation-bar__title__list-bar"></span>
+        <span id="animation-list-bar7" class="list-animation-bar__title__list-bar"></span>
+        <span id="animation-list-bar8" class="list-animation-bar__title__list-bar"></span>
+        <span id="animation-list-bar9" class="list-animation-bar__title__list-bar"></span>
+        <span id="animation-list-bar10" class="list-animation-bar__title__list-bar"></span>
+      </div>
+    </div>
+    <div class="list-animation-bar__image-list">
+      <div id="list-animation-bar__image-list__move-left" class="list-animation-bar__image-list__move"><i
+          class="fas fa-angle-left fa-3x"></i></div>
+      <div class="list-animation-bar__image-list__images">
+        <!-- 크기 줄어들다 일정 크기되면 image div생성 -->
+        <div id="list_item_left0" class="list_item_left"></div>
+        <div id="list_item_left1" class="list_item_left"></div>
+        <div id="list_item_left2" class="list_item_left"></div>
+        <div id="list_item_left3" class="list_item_left"></div>
+        <div id="list_image_left_hidden" class="list_image_move list_item_left"><img src="image/babybossBG.jpg" /></div>
+
+        <div id="list_image0" class="list-animation-bar__image-list__image list_nav_bar"><img
+            src="image/Adventure_Time__Title_card.png" /></div>
+        <div id="list_image1" class="list-animation-bar__image-list__image list_nav_bar"><img src="image/larva_.jpg" />
+        </div>
+        <div id="list_image2" class="list-animation-bar__image-list__image list_nav_bar"><img
+            src="image/babybossBG.jpg" /></div>
+        <div id="list_image3" class="list-animation-bar__image-list__image list_nav_bar"><img
+            src="image/Adventure_Time__Title_card.png" /></div>
+        <div id="list_image4" class="list-animation-bar__image-list__image list_nav_bar"><img src="image/larva_.jpg" />
+        </div>
+        <div id="list_image5" class="list-animation-bar__image-list__image list_nav_bar"><img
+            src="image/babybossBG.jpg" /></div>
+
+        <div id="list_image_right_hidden" class="list_image_move list_item_right"><img
+            src="image/Adventure_Time__Title_card.png" /></div>
+        <div id="list_item_right0" class="list_item_right"><img src="image/larva_.jpg" /></div>
+        <div id="list_item_right1" class="list_item_right"><img src="image/babybossBG.jpg" /></div>
+        <div id="list_item_right2" class="list_item_right"><img src="image/Adventure_Time__Title_card.png" /></div>
+        <div id="list_item_right3" class="list_item_right"><img src="image/larva_.jpg" /></div>
+
+      </div>
+      <div id="list-animation-bar__image-list__move-right" class="list-animation-bar__image-list__move"><i
+          class="fas fa-angle-right fa-3x"></i></div>
+    </div>
+  </div>
+  <!-- 10 -->
+  <div class="list-animation-bar">
+    <div class="list-animation-bar__title">
+      <span>새로운 콘텐츠</span>
+      <div class="list-animation-bar__title__list">
+        <span id="animation-list-bar1" class="list-animation-bar__title__list-bar"></span>
+        <span id="animation-list-bar2" class="list-animation-bar__title__list-bar"></span>
+        <span id="animation-list-bar3" class="list-animation-bar__title__list-bar"></span>
+        <span id="animation-list-bar4" class="list-animation-bar__title__list-bar"></span>
+        <span id="animation-list-bar5" class="list-animation-bar__title__list-bar"></span>
+        <span id="animation-list-bar6" class="list-animation-bar__title__list-bar"></span>
+        <span id="animation-list-bar7" class="list-animation-bar__title__list-bar"></span>
+        <span id="animation-list-bar8" class="list-animation-bar__title__list-bar"></span>
+        <span id="animation-list-bar9" class="list-animation-bar__title__list-bar"></span>
+        <span id="animation-list-bar10" class="list-animation-bar__title__list-bar"></span>
+      </div>
+    </div>
+    <div class="list-animation-bar__image-list">
+      <div id="list-animation-bar__image-list__move-left" class="list-animation-bar__image-list__move"><i
+          class="fas fa-angle-left fa-3x"></i></div>
+      <div class="list-animation-bar__image-list__images">
+        <!-- 크기 줄어들다 일정 크기되면 image div생성 -->
+        <div id="list_item_left0" class="list_item_left"></div>
+        <div id="list_item_left1" class="list_item_left"></div>
+        <div id="list_item_left2" class="list_item_left"></div>
+        <div id="list_item_left3" class="list_item_left"></div>
+        <div id="list_image_left_hidden" class="list_image_move list_item_left"><img src="image/babybossBG.jpg" /></div>
+
+        <div id="list_image0" class="list-animation-bar__image-list__image list_nav_bar"><img
+            src="image/Adventure_Time__Title_card.png" /></div>
+        <div id="list_image1" class="list-animation-bar__image-list__image list_nav_bar"><img src="image/larva_.jpg" />
+        </div>
+        <div id="list_image2" class="list-animation-bar__image-list__image list_nav_bar"><img
+            src="image/babybossBG.jpg" /></div>
+        <div id="list_image3" class="list-animation-bar__image-list__image list_nav_bar"><img
+            src="image/Adventure_Time__Title_card.png" /></div>
+        <div id="list_image4" class="list-animation-bar__image-list__image list_nav_bar"><img src="image/larva_.jpg" />
+        </div>
+        <div id="list_image5" class="list-animation-bar__image-list__image list_nav_bar"><img
+            src="image/babybossBG.jpg" /></div>
+
+        <div id="list_image_right_hidden" class="list_image_move list_item_right"><img
+            src="image/Adventure_Time__Title_card.png" /></div>
+        <div id="list_item_right0" class="list_item_right"><img src="image/larva_.jpg" /></div>
+        <div id="list_item_right1" class="list_item_right"><img src="image/babybossBG.jpg" /></div>
+        <div id="list_item_right2" class="list_item_right"><img src="image/Adventure_Time__Title_card.png" /></div>
+        <div id="list_item_right3" class="list_item_right"><img src="image/larva_.jpg" /></div>
+
+      </div>
+      <div id="list-animation-bar__image-list__move-right" class="list-animation-bar__image-list__move"><i
+          class="fas fa-angle-right fa-3x"></i></div>
+    </div>
+  </div>
+  <!-- 11 -->
+  <div class="list-animation-bar">
+    <div class="list-animation-bar__title">
+      <span class="list-animation-bar__title__content">무서운 이야기<span>모두보기</span><i class="fas fa-angle-right"></i></span>
+      <div class="list-animation-bar__title__list">
+        <span id="animation-list-bar1" class="list-animation-bar__title__list-bar"></span>
+        <span id="animation-list-bar2" class="list-animation-bar__title__list-bar"></span>
+        <span id="animation-list-bar3" class="list-animation-bar__title__list-bar"></span>
+        <span id="animation-list-bar4" class="list-animation-bar__title__list-bar"></span>
+        <span id="animation-list-bar5" class="list-animation-bar__title__list-bar"></span>
+        <span id="animation-list-bar6" class="list-animation-bar__title__list-bar"></span>
+        <span id="animation-list-bar7" class="list-animation-bar__title__list-bar"></span>
+        <span id="animation-list-bar8" class="list-animation-bar__title__list-bar"></span>
+        <span id="animation-list-bar9" class="list-animation-bar__title__list-bar"></span>
+        <span id="animation-list-bar10" class="list-animation-bar__title__list-bar"></span>
+      </div>
+    </div>
+    <div class="list-animation-bar__image-list">
+      <div id="list-animation-bar__image-list__move-left" class="list-animation-bar__image-list__move"><i
+          class="fas fa-angle-left fa-3x"></i></div>
+      <div class="list-animation-bar__image-list__images">
+        <!-- 크기 줄어들다 일정 크기되면 image div생성 -->
+        <div id="list_item_left0" class="list_item_left"></div>
+        <div id="list_item_left1" class="list_item_left"></div>
+        <div id="list_item_left2" class="list_item_left"></div>
+        <div id="list_item_left3" class="list_item_left"></div>
+        <div id="list_image_left_hidden" class="list_image_move list_item_left"><img src="image/babybossBG.jpg" /></div>
+
+        <div id="list_image0" class="list-animation-bar__image-list__image list_nav_bar"><img
+            src="image/Adventure_Time__Title_card.png" /></div>
+        <div id="list_image1" class="list-animation-bar__image-list__image list_nav_bar"><img src="image/larva_.jpg" />
+        </div>
+        <div id="list_image2" class="list-animation-bar__image-list__image list_nav_bar"><img
+            src="image/babybossBG.jpg" /></div>
+        <div id="list_image3" class="list-animation-bar__image-list__image list_nav_bar"><img
+            src="image/Adventure_Time__Title_card.png" /></div>
+        <div id="list_image4" class="list-animation-bar__image-list__image list_nav_bar"><img src="image/larva_.jpg" />
+        </div>
+        <div id="list_image5" class="list-animation-bar__image-list__image list_nav_bar"><img
+            src="image/babybossBG.jpg" /></div>
+
+        <div id="list_image_right_hidden" class="list_image_move list_item_right"><img
+            src="image/Adventure_Time__Title_card.png" /></div>
+        <div id="list_item_right0" class="list_item_right"><img src="image/larva_.jpg" /></div>
+        <div id="list_item_right1" class="list_item_right"><img src="image/babybossBG.jpg" /></div>
+        <div id="list_item_right2" class="list_item_right"><img src="image/Adventure_Time__Title_card.png" /></div>
+        <div id="list_item_right3" class="list_item_right"><img src="image/larva_.jpg" /></div>
+
+      </div>
+      <div id="list-animation-bar__image-list__move-right" class="list-animation-bar__image-list__move"><i
+          class="fas fa-angle-right fa-3x"></i></div>
+    </div>
+  </div>
+  <!-- 12 -->
+  <div class="list-animation-bar">
+    <div class="list-animation-bar__title">
+      <span class="list-animation-bar__title__content">걸파워<span>모두보기</span><i class="fas fa-angle-right"></i></span>
+      <div class="list-animation-bar__title__list">
+        <span id="animation-list-bar1" class="list-animation-bar__title__list-bar"></span>
+        <span id="animation-list-bar2" class="list-animation-bar__title__list-bar"></span>
+        <span id="animation-list-bar3" class="list-animation-bar__title__list-bar"></span>
+        <span id="animation-list-bar4" class="list-animation-bar__title__list-bar"></span>
+        <span id="animation-list-bar5" class="list-animation-bar__title__list-bar"></span>
+        <span id="animation-list-bar6" class="list-animation-bar__title__list-bar"></span>
+        <span id="animation-list-bar7" class="list-animation-bar__title__list-bar"></span>
+        <span id="animation-list-bar8" class="list-animation-bar__title__list-bar"></span>
+        <span id="animation-list-bar9" class="list-animation-bar__title__list-bar"></span>
+        <span id="animation-list-bar10" class="list-animation-bar__title__list-bar"></span>
+      </div>
+    </div>
+    <div class="list-animation-bar__image-list">
+      <div id="list-animation-bar__image-list__move-left" class="list-animation-bar__image-list__move"><i
+          class="fas fa-angle-left fa-3x"></i></div>
+      <div class="list-animation-bar__image-list__images">
+        <!-- 크기 줄어들다 일정 크기되면 image div생성 -->
+        <div id="list_item_left0" class="list_item_left"></div>
+        <div id="list_item_left1" class="list_item_left"></div>
+        <div id="list_item_left2" class="list_item_left"></div>
+        <div id="list_item_left3" class="list_item_left"></div>
+        <div id="list_image_left_hidden" class="list_image_move list_item_left"><img src="image/babybossBG.jpg" /></div>
+
+        <div id="list_image0" class="list-animation-bar__image-list__image list_nav_bar"><img
+            src="image/Adventure_Time__Title_card.png" /></div>
+        <div id="list_image1" class="list-animation-bar__image-list__image list_nav_bar"><img src="image/larva_.jpg" />
+        </div>
+        <div id="list_image2" class="list-animation-bar__image-list__image list_nav_bar"><img
+            src="image/babybossBG.jpg" /></div>
+        <div id="list_image3" class="list-animation-bar__image-list__image list_nav_bar"><img
+            src="image/Adventure_Time__Title_card.png" /></div>
+        <div id="list_image4" class="list-animation-bar__image-list__image list_nav_bar"><img src="image/larva_.jpg" />
+        </div>
+        <div id="list_image5" class="list-animation-bar__image-list__image list_nav_bar"><img
+            src="image/babybossBG.jpg" /></div>
+
+        <div id="list_image_right_hidden" class="list_image_move list_item_right"><img
+            src="image/Adventure_Time__Title_card.png" /></div>
+        <div id="list_item_right0" class="list_item_right"><img src="image/larva_.jpg" /></div>
+        <div id="list_item_right1" class="list_item_right"><img src="image/babybossBG.jpg" /></div>
+        <div id="list_item_right2" class="list_item_right"><img src="image/Adventure_Time__Title_card.png" /></div>
+        <div id="list_item_right3" class="list_item_right"><img src="image/larva_.jpg" /></div>
+
+      </div>
+      <div id="list-animation-bar__image-list__move-right" class="list-animation-bar__image-list__move"><i
+          class="fas fa-angle-right fa-3x"></i></div>
+    </div>
+  </div>
+  <!-- 13 -->
+  <div class="list-animation-bar">
+    <div class="list-animation-bar__title">
+      <span class="list-animation-bar__title__content">수수께끼<span>모두보기</span><i class="fas fa-angle-right"></i></span>
+      <div class="list-animation-bar__title__list">
+        <span id="animation-list-bar1" class="list-animation-bar__title__list-bar"></span>
+        <span id="animation-list-bar2" class="list-animation-bar__title__list-bar"></span>
+        <span id="animation-list-bar3" class="list-animation-bar__title__list-bar"></span>
+        <span id="animation-list-bar4" class="list-animation-bar__title__list-bar"></span>
+        <span id="animation-list-bar5" class="list-animation-bar__title__list-bar"></span>
+        <span id="animation-list-bar6" class="list-animation-bar__title__list-bar"></span>
+        <span id="animation-list-bar7" class="list-animation-bar__title__list-bar"></span>
+        <span id="animation-list-bar8" class="list-animation-bar__title__list-bar"></span>
+        <span id="animation-list-bar9" class="list-animation-bar__title__list-bar"></span>
+        <span id="animation-list-bar10" class="list-animation-bar__title__list-bar"></span>
+      </div>
+    </div>
+    <div class="list-animation-bar__image-list">
+      <div id="list-animation-bar__image-list__move-left" class="list-animation-bar__image-list__move"><i
+          class="fas fa-angle-left fa-3x"></i></div>
+      <div class="list-animation-bar__image-list__images">
+        <!-- 크기 줄어들다 일정 크기되면 image div생성 -->
+        <div id="list_item_left0" class="list_item_left"></div>
+        <div id="list_item_left1" class="list_item_left"></div>
+        <div id="list_item_left2" class="list_item_left"></div>
+        <div id="list_item_left3" class="list_item_left"></div>
+        <div id="list_image_left_hidden" class="list_image_move list_item_left"><img src="image/babybossBG.jpg" /></div>
+
+        <div id="list_image0" class="list-animation-bar__image-list__image list_nav_bar"><img
+            src="image/Adventure_Time__Title_card.png" /></div>
+        <div id="list_image1" class="list-animation-bar__image-list__image list_nav_bar"><img src="image/larva_.jpg" />
+        </div>
+        <div id="list_image2" class="list-animation-bar__image-list__image list_nav_bar"><img
+            src="image/babybossBG.jpg" /></div>
+        <div id="list_image3" class="list-animation-bar__image-list__image list_nav_bar"><img
+            src="image/Adventure_Time__Title_card.png" /></div>
+        <div id="list_image4" class="list-animation-bar__image-list__image list_nav_bar"><img src="image/larva_.jpg" />
+        </div>
+        <div id="list_image5" class="list-animation-bar__image-list__image list_nav_bar"><img
+            src="image/babybossBG.jpg" /></div>
+
+        <div id="list_image_right_hidden" class="list_image_move list_item_right"><img
+            src="image/Adventure_Time__Title_card.png" /></div>
+        <div id="list_item_right0" class="list_item_right"><img src="image/larva_.jpg" /></div>
+        <div id="list_item_right1" class="list_item_right"><img src="image/babybossBG.jpg" /></div>
+        <div id="list_item_right2" class="list_item_right"><img src="image/Adventure_Time__Title_card.png" /></div>
+        <div id="list_item_right3" class="list_item_right"><img src="image/larva_.jpg" /></div>
+
+      </div>
+      <div id="list-animation-bar__image-list__move-right" class="list-animation-bar__image-list__move"><i
+          class="fas fa-angle-right fa-3x"></i></div>
+    </div>
+  </div>
+  <!-- 14 -->
+  <div class="list-animation-bar">
+    <div class="list-animation-bar__title">
+      <span class="list-animation-bar__title__content">온 가족이 함께<span>모두보기</span><i
+          class="fas fa-angle-right"></i></span>
+      <div class="list-animation-bar__title__list">
+        <span id="animation-list-bar1" class="list-animation-bar__title__list-bar"></span>
+        <span id="animation-list-bar2" class="list-animation-bar__title__list-bar"></span>
+        <span id="animation-list-bar3" class="list-animation-bar__title__list-bar"></span>
+        <span id="animation-list-bar4" class="list-animation-bar__title__list-bar"></span>
+        <span id="animation-list-bar5" class="list-animation-bar__title__list-bar"></span>
+        <span id="animation-list-bar6" class="list-animation-bar__title__list-bar"></span>
+        <span id="animation-list-bar7" class="list-animation-bar__title__list-bar"></span>
+        <span id="animation-list-bar8" class="list-animation-bar__title__list-bar"></span>
+        <span id="animation-list-bar9" class="list-animation-bar__title__list-bar"></span>
+        <span id="animation-list-bar10" class="list-animation-bar__title__list-bar"></span>
+      </div>
+    </div>
+    <div class="list-animation-bar__image-list">
+      <div id="list-animation-bar__image-list__move-left" class="list-animation-bar__image-list__move"><i
+          class="fas fa-angle-left fa-3x"></i></div>
+      <div class="list-animation-bar__image-list__images">
+        <!-- 크기 줄어들다 일정 크기되면 image div생성 -->
+        <div id="list_item_left0" class="list_item_left"></div>
+        <div id="list_item_left1" class="list_item_left"></div>
+        <div id="list_item_left2" class="list_item_left"></div>
+        <div id="list_item_left3" class="list_item_left"></div>
+        <div id="list_image_left_hidden" class="list_image_move list_item_left"><img src="image/babybossBG.jpg" /></div>
+
+        <div id="list_image0" class="list-animation-bar__image-list__image list_nav_bar"><img
+            src="image/Adventure_Time__Title_card.png" /></div>
+        <div id="list_image1" class="list-animation-bar__image-list__image list_nav_bar"><img src="image/larva_.jpg" />
+        </div>
+        <div id="list_image2" class="list-animation-bar__image-list__image list_nav_bar"><img
+            src="image/babybossBG.jpg" /></div>
+        <div id="list_image3" class="list-animation-bar__image-list__image list_nav_bar"><img
+            src="image/Adventure_Time__Title_card.png" /></div>
+        <div id="list_image4" class="list-animation-bar__image-list__image list_nav_bar"><img src="image/larva_.jpg" />
+        </div>
+        <div id="list_image5" class="list-animation-bar__image-list__image list_nav_bar"><img
+            src="image/babybossBG.jpg" /></div>
+
+        <div id="list_image_right_hidden" class="list_image_move list_item_right"><img
+            src="image/Adventure_Time__Title_card.png" /></div>
+        <div id="list_item_right0" class="list_item_right"><img src="image/larva_.jpg" /></div>
+        <div id="list_item_right1" class="list_item_right"><img src="image/babybossBG.jpg" /></div>
+        <div id="list_item_right2" class="list_item_right"><img src="image/Adventure_Time__Title_card.png" /></div>
+        <div id="list_item_right3" class="list_item_right"><img src="image/larva_.jpg" /></div>
+
+      </div>
+      <div id="list-animation-bar__image-list__move-right" class="list-animation-bar__image-list__move"><i
+          class="fas fa-angle-right fa-3x"></i></div>
+    </div>
+  </div>
+  <!-- 15 -->
+  <div class="list-animation-bar">
+    <div class="list-animation-bar__title">
+      <span class="list-animation-bar__title__content">책 속의 주인공을 만나요<span>모두보기</span><i
+          class="fas fa-angle-right"></i></span>
+      <div class="list-animation-bar__title__list">
+        <span id="animation-list-bar1" class="list-animation-bar__title__list-bar"></span>
+        <span id="animation-list-bar2" class="list-animation-bar__title__list-bar"></span>
+        <span id="animation-list-bar3" class="list-animation-bar__title__list-bar"></span>
+        <span id="animation-list-bar4" class="list-animation-bar__title__list-bar"></span>
+        <span id="animation-list-bar5" class="list-animation-bar__title__list-bar"></span>
+        <span id="animation-list-bar6" class="list-animation-bar__title__list-bar"></span>
+        <span id="animation-list-bar7" class="list-animation-bar__title__list-bar"></span>
+        <span id="animation-list-bar8" class="list-animation-bar__title__list-bar"></span>
+        <span id="animation-list-bar9" class="list-animation-bar__title__list-bar"></span>
+        <span id="animation-list-bar10" class="list-animation-bar__title__list-bar"></span>
+      </div>
+    </div>
+    <div class="list-animation-bar__image-list">
+      <div id="list-animation-bar__image-list__move-left" class="list-animation-bar__image-list__move"><i
+          class="fas fa-angle-left fa-3x"></i></div>
+      <div class="list-animation-bar__image-list__images">
+        <!-- 크기 줄어들다 일정 크기되면 image div생성 -->
+        <div id="list_item_left0" class="list_item_left"></div>
+        <div id="list_item_left1" class="list_item_left"></div>
+        <div id="list_item_left2" class="list_item_left"></div>
+        <div id="list_item_left3" class="list_item_left"></div>
+        <div id="list_image_left_hidden" class="list_image_move list_item_left"><img src="image/babybossBG.jpg" /></div>
+
+        <div id="list_image0" class="list-animation-bar__image-list__image list_nav_bar"><img
+            src="image/Adventure_Time__Title_card.png" /></div>
+        <div id="list_image1" class="list-animation-bar__image-list__image list_nav_bar"><img src="image/larva_.jpg" />
+        </div>
+        <div id="list_image2" class="list-animation-bar__image-list__image list_nav_bar"><img
+            src="image/babybossBG.jpg" /></div>
+        <div id="list_image3" class="list-animation-bar__image-list__image list_nav_bar"><img
+            src="image/Adventure_Time__Title_card.png" /></div>
+        <div id="list_image4" class="list-animation-bar__image-list__image list_nav_bar"><img src="image/larva_.jpg" />
+        </div>
+        <div id="list_image5" class="list-animation-bar__image-list__image list_nav_bar"><img
+            src="image/babybossBG.jpg" /></div>
+
+        <div id="list_image_right_hidden" class="list_image_move list_item_right"><img
+            src="image/Adventure_Time__Title_card.png" /></div>
+        <div id="list_item_right0" class="list_item_right"><img src="image/larva_.jpg" /></div>
+        <div id="list_item_right1" class="list_item_right"><img src="image/babybossBG.jpg" /></div>
+        <div id="list_item_right2" class="list_item_right"><img src="image/Adventure_Time__Title_card.png" /></div>
+        <div id="list_item_right3" class="list_item_right"><img src="image/larva_.jpg" /></div>
+
+      </div>
+      <div id="list-animation-bar__image-list__move-right" class="list-animation-bar__image-list__move"><i
+          class="fas fa-angle-right fa-3x"></i></div>
+    </div>
+  </div>
+
+  <!-- 스크롤 맨밑 글.. -->
+  <div class="final">
+    <div class="final__etc">
+      <div class="final_etc">
+        <span>자막 및 음성</span>
+        <span>투자 정보(IR)</span>
+        <span>법적 고지</span>
+      </div>
+      <div class="final_etc">
+        <span>음성 지원</span>
+        <span>입사 정보</span>
+        <span>쿠키 설정</span>
+      </div>
+      <div class="final_etc">
+        <span>기프트카드</span>
+        <span>이용 약관</span>
+        <span>회사 정보</span>
+      </div>
+      <div class="final_etc">
+        <span>미디어 센터</span>
+        <span>개인정보</span>
+        <span>문의 하기</span>
+      </div>
+    </div>
+    <div class="final_serviceCode">
+      <span>서비스 코드</span>
+    </div>
+    <div class="final_info">
+      <span>
+
+        넥플릭스서비시스코리아 유한회사 통신판매업신고번호: 제2018-서울종로-0426호 전화번호: 00-308-321-0058
+        <br><br>
+        대표: 레지널드 손 톰프슨
+        <br><br>
+        이메일 주소:korea@netflix.com<br><br>
+        주소: 대한민국 서울특별시 종로구 우정국로 26, 센트로폴리스 A동 2층 우편번호 03161<br>
+        <br>클라우드 호스팅:Amazon Web Sevices inc.
+        <br><br>
+        공정거래위원회 웹사이트 링크<br>
+        &nbsp;{!-0183cd2bb8707ff47}
+      </span>
+    </div>
+  </div>
+  <script src="list-bar.js"></script>
+  <script src="list-bar-animation.js"></script>
+</body>
+
 </html>

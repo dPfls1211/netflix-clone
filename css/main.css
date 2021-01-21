@@ -4,8 +4,14 @@
 @import "banner.css";
 @import "animationlistbar.css";
 @import "list-bar.css";
+@import "final.css";
 
 body {
   color: white;
   background-color: #141414;
+}
+#netflix-screen {
+  height: 420vh;
+  position: relative;
+  font-size: 13px;
 }

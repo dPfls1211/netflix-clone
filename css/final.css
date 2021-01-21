@@ -1,0 +1,33 @@
+.final{
+    padding: 80px 40px;
+    
+    color: rgb(139, 139, 139);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 750px;
+}
+.final__etc{
+    display: flex;
+
+    justify-content: space-between;
+}
+.final_etc span{
+    display: flex;
+    padding-top: 15px;
+    justify-content: space-between;
+}
+.final_serviceCode{
+    padding: 40px 0;
+}
+.final_serviceCode span{
+    padding: 8px;
+    border: 1px solid rgb(139, 139, 139);
+}
+.final_info{
+    font-size: 11px;
+}
+.final_info br{
+    
+    padding: 5px 0;
+}
