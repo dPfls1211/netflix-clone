@@ -16,7 +16,7 @@ var bar1 = document.getElementById('animation-list-bar1'),
 var id = 1;
 var pointx = -630;
 //visibility: hidden;
-next.addEventListener('click', function (event) {
+next.addEventListener('click', function (event) { //함수 추가 및.. html에서 click함수 로 사용..
     var moveimage = this.previousElementSibling; //next클릭시 그 클릭한 객체의 형제 객체중 클릭한 객체 다음에 있는 요소
 
     var leftbtn = this.previousElementSibling.previousElementSibling;
@@ -24,7 +24,7 @@ next.addEventListener('click', function (event) {
     moveimage.style.transform = 'translateX(' + pointx + 'px)';
     pointx -= 630;
     // moveimage.style.setProperty(`${transform}`,-630`px`);
-    moveimage.style.transition = 'transform 1s';
+    moveimage.style.transition = 'transform 1s'; //'left 1s'
     console.log(moveimage.style.translate);
     // moveimage.animate({"translate":"-300px"});
     id += 1;
